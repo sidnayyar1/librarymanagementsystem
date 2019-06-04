@@ -1,12 +1,18 @@
 package borrower;
 
-public class Borrower_Type {
-    int ID;
-    String FirstName;
-    String LastName;
-    String Gender;
-    String Email;
+import Display.IDisplay;
 
+import java.util.Scanner;
+
+public class Borrower_Type implements IDisplay {
+    private int ID;
+   private String FirstName;
+   private String LastName;
+   private String Gender;
+   private String Email;
+
+
+   static Scanner UserInput=new Scanner(System.in);
 
 
     public int getID() {
@@ -47,5 +53,11 @@ public class Borrower_Type {
 
     public void setEmail(String email) {
         Email = email;
+    }
+
+
+    @Override
+    public void idisplay() {
+
     }
 }
