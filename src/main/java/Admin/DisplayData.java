@@ -20,10 +20,10 @@ public class DisplayData {
 
 
         String[] ScienceBooks = new String[0];
-        String[] CommerceBooks=new String[0];
-        String[] ArtsBooks=new String[0];
+        String[] CommerceBooks = new String[0];
+        String[] ArtsBooks = new String[0];
         Scanner obj1 = new Scanner(System.in);
-       Scanner obj2 = new Scanner(System.in);
+        Scanner obj2 = new Scanner(System.in);
 
         Librarian l1 = new Librarian();
         Arts a1 = new Arts();
@@ -41,16 +41,6 @@ public class DisplayData {
         if (r == 'Y' || r == 'y') {
 
             System.out.println("Student Details");
-            bt1.idisplay();
-        }
-
-        System.out.println("Would you like to login as student or teacher?");
-
-        String j = obj1.nextLine();
-
-        if (j == "student") {
-
-            System.out.println("Student details");
 
             bt1.setFirstName("Sidharth");
             bt1.setLastName("Nayyar");
@@ -58,86 +48,111 @@ public class DisplayData {
             bt1.setEmail("sidnayyar1@gmail.com");
             s1.setBatchNumber(1);
             s1.setClassName("12th");
+            bt1.idisplay();
 
-        } else if (j == "Teacher") {
+        } else if (r == 'N' || r == 'n') {
 
-            t1.setFacultyName("George");
-            bt1.setGender("Male");
-            t1.setSubject("Science");
+            System.out.println("no execute");
+
+            System.exit(0);
         }
+            System.out.println("login as student or teacher?");
 
-        System.out.println("Books available for students");
-        System.out.println("Enter the course book you want to select");
-        j = obj1.nextLine();
-        {
-            if (j == "Science") {
-                System.out.println("Science books");
+            String j = obj1.next();
 
-                ScienceBooks = new String[]{"biology", "chemistry", "maths", "Physics", "Computer Sciense"};
-                for (int i = 0; i < ScienceBooks.length; i++) {
-                    System.out.println("The Books are  \n" + i);
-                }
+            if (j == "student") {
 
-            } else if (j == "Commerce") {
+                System.out.println("Student details");
 
-                CommerceBooks = new String[]{"business", "maths", "econimics", "Internation business", "Current affairs"};
-                for (int i = 0; i < CommerceBooks.length; i++) {
-                    System.out.println("The Books are  \n" + i);
+                bt1.setFirstName("Sidharth");
+                bt1.setLastName("Nayyar");
+                bt1.setGender("Male");
+                bt1.setEmail("sidnayyar1@gmail.com");
+                s1.setBatchNumber(1);
+                s1.setClassName("12th");
+                bt1.idisplay();
+                s1.idisplay();
 
-                }
+            } else if (j == "Teacher") {
 
-            } else if (j == "Arts") {
-                ArtsBooks = new String[]{"philosopy", "Litrature", "geography", "political science", "humanities"};
-                for (int i = 0; i < ArtsBooks.length; i++) {
-                    System.out.println("The Books are  \n" + i);
-
-                }
+                t1.setFacultyName("George");
+                bt1.setGender("Male");
+                t1.setSubject("Science");
             }
-            System.out.println("Enter the course book you want to issue");
-            j = obj1.nextLine();
-            if (j == "Science") {
-                System.out.println("Enter number of books ?");
-                number = obj2.nextInt();
-                switch (number) {
-                    case 1: {
-                        bt1.idisplay();
-                        for (int i = 0; i < 1; i++) {
-                            System.out.println("books selected are   " + ScienceBooks[i]);
 
-                            break;
-                        }
+            //System.out.println("Books available for students");
+            System.out.println("Enter the course you want to select");
+            j = obj1.next();
+            {
+                if (j.equals("Science")) {
+                    System.out.println("Science books");
+
+                    ScienceBooks = new String[]{"biology", "chemistry", "maths", "Physics", "Computer Sciense"};
+                    for (int i = 0; i < ScienceBooks.length; i++) {
+                        System.out.println("The Books are  \n" + i);
                     }
-                    case 2: {
 
-                        bt1.idisplay();
-                        for (int i = 0; i < 2; i++) {
-                            System.out.println("books selected are   " + ScienceBooks[i]);
-                            break;
-                        }
+                } else if (j.equals("Commerce")) {
+
+                    CommerceBooks = new String[]{"business", "maths", "econimics", "Internation business", "Current affairs"};
+                    for (int i = 0; i < CommerceBooks.length; i++) {
+                        System.out.println("The Books are  \n" + i);
+
                     }
-                    case 3: {
 
-                        bt1.idisplay();
-                        for (int i = 0; i < 3; i++) {
-                            System.out.println("books selected are   " + ScienceBooks[i]);
-                            break;
-                        }
+                } else if (j.equals( "Arts")) {
+                    ArtsBooks = new String[]{"philosopy", "Litrature", "geography", "political science", "humanities"};
+                    for (int i = 0; i < ArtsBooks.length; i++) {
+                        System.out.println("The Books are  \n" + i);
+
                     }
-                    case 4: {
+                }
+                System.out.println("Enter the course book you want to issue");
+                j = obj1.next();
+                if (j.equals( "Science")) {
+                    System.out.println("Enter number of books ?");
+                    number = obj2.nextInt();
+                    switch (number) {
+                        case 1: {
+                            bt1.idisplay();
+                            for (int i = 0; i < 1; i++) {
+                                System.out.println("books selected are   " + ScienceBooks[i]);
 
-                        bt1.idisplay();
-                        for (int i = 0; i < 4; i++) {
-                            System.out.println("books selected are   " + ScienceBooks[i]);
-                            break;
+                                break;
+                            }
                         }
-                    }
-                    case 5: {
-                        for (int i = 0; i < 5; i++) {
-                            System.out.println("books selected are   " + ScienceBooks[i]);
-                            break;
-                        }
+                        case 2: {
 
-                    }default:
+                            bt1.idisplay();
+                            for (int i = 0; i < 2; i++) {
+                                System.out.println("books selected are   " + ScienceBooks[i]);
+                                break;
+                            }
+                        }
+                        case 3: {
+
+                            bt1.idisplay();
+                            for (int i = 0; i < 3; i++) {
+                                System.out.println("books selected are   " + ScienceBooks[i]);
+                                break;
+                            }
+                        }
+                        case 4: {
+
+                            bt1.idisplay();
+                            for (int i = 0; i < 4; i++) {
+                                System.out.println("books selected are   " + ScienceBooks[i]);
+                                break;
+                            }
+                        }
+                        case 5: {
+                            for (int i = 0; i < 5; i++) {
+                                System.out.println("books selected are   " + ScienceBooks[i]);
+                                break;
+                            }
+
+                        }
+                        default:
                     }
                     {
                         System.out.println("Invalid Number");
@@ -148,112 +163,116 @@ public class DisplayData {
                     }
 
 
-                }else if (j=="Commerce"){
+                } else if (j.equals("Commerce")) {
 
-                System.out.println("Enter number of books ?");
-                number = obj2.nextInt();
-                switch (number) {
-                    case 1: {
-                        bt1.idisplay();
-                        for (int i = 0; i < 1; i++) {
-                            System.out.println("books selected are   " + CommerceBooks[i]);
+                    System.out.println("Enter number of books ?");
+                    number = obj2.nextInt();
+                    switch (number) {
+                        case 1: {
+                            bt1.idisplay();
+                            for (int i = 0; i < 1; i++) {
+                                System.out.println("books selected are   " + CommerceBooks[i]);
 
-                            break;
+                                break;
+                            }
                         }
+                        case 2: {
+
+                            bt1.idisplay();
+                            for (int i = 0; i < 2; i++) {
+                                System.out.println("books selected are   " + CommerceBooks[i]);
+                                break;
+                            }
+                        }
+                        case 3: {
+
+                            bt1.idisplay();
+                            for (int i = 0; i < 3; i++) {
+                                System.out.println("books selected are   " + CommerceBooks[i]);
+                                break;
+                            }
+                        }
+                        case 4: {
+
+                            bt1.idisplay();
+                            for (int i = 0; i < 4; i++) {
+                                System.out.println("books selected are   " + CommerceBooks[i]);
+                                break;
+                            }
+                        }
+                        case 5: {
+                            for (int i = 0; i < 5; i++) {
+                                System.out.println("books selected are   " + CommerceBooks[i]);
+                                break;
+                            }
+
+                        }
+                        default:
                     }
-                    case 2: {
+                    {
+                        System.out.println("Invalid Number");
+
 
                         bt1.idisplay();
-                        for (int i = 0; i < 2; i++) {
-                            System.out.println("books selected are   " + CommerceBooks[i]);
-                            break;
-                        }
+
                     }
-                    case 3: {
+
+                } else if (j.equals("Arts")) {
+
+                    System.out.println("Enter number of books ?");
+                    number = obj2.nextInt();
+                    switch (number) {
+                        case 1: {
+                            bt1.idisplay();
+                            for (int i = 0; i < 1; i++) {
+                                System.out.println("books selected are   " + ArtsBooks[i]);
+
+                                break;
+                            }
+                        }
+                        case 2: {
+
+                            bt1.idisplay();
+                            for (int i = 0; i < 2; i++) {
+                                System.out.println("books selected are   " + ArtsBooks[i]);
+                                break;
+                            }
+                        }
+                        case 3: {
+
+                            bt1.idisplay();
+                            for (int i = 0; i < 3; i++) {
+                                System.out.println("books selected are   " + ArtsBooks[i]);
+                                break;
+                            }
+                        }
+                        case 4: {
+
+                            bt1.idisplay();
+                            for (int i = 0; i < 4; i++) {
+                                System.out.println("books selected are   " + ArtsBooks[i]);
+                                break;
+                            }
+                        }
+                        case 5: {
+                            for (int i = 0; i < 5; i++) {
+                                System.out.println("books selected are   " + ArtsBooks[i]);
+                                break;
+                            }
+
+                        }
+                        default:
+                    }
+                    {
+                        System.out.println("Invalid Number");
+
 
                         bt1.idisplay();
-                        for (int i = 0; i < 3; i++) {
-                            System.out.println("books selected are   " + CommerceBooks[i]);
-                            break;
-                        }
+
                     }
-                    case 4: {
-
-                        bt1.idisplay();
-                        for (int i = 0; i < 4; i++) {
-                            System.out.println("books selected are   " + CommerceBooks[i]);
-                            break;
-                        }
-                    }
-                    case 5: {
-                        for (int i = 0; i < 5; i++) {
-                            System.out.println("books selected are   " + CommerceBooks[i]);
-                            break;
-                        }
-
-                    }default:
-                } {
-                    System.out.println("Invalid Number");
-
-
-                    bt1.idisplay();
-
                 }
 
-            }else if(j=="Arts"){
-
-                System.out.println("Enter number of books ?");
-                number = obj2.nextInt();
-                switch (number) {
-                    case 1: {
-                        bt1.idisplay();
-                        for (int i = 0; i < 1; i++) {
-                            System.out.println("books selected are   " + ArtsBooks[i]);
-
-                            break;
-                        }
-                    }
-                    case 2: {
-
-                        bt1.idisplay();
-                        for (int i = 0; i < 2; i++) {
-                            System.out.println("books selected are   " + ArtsBooks[i]);
-                            break;
-                        }
-                    }
-                    case 3: {
-
-                        bt1.idisplay();
-                        for (int i = 0; i < 3; i++) {
-                            System.out.println("books selected are   " + ArtsBooks[i]);
-                            break;
-                        }
-                    }
-                    case 4: {
-
-                        bt1.idisplay();
-                        for (int i = 0; i < 4; i++) {
-                            System.out.println("books selected are   " + ArtsBooks[i]);
-                            break;
-                        }
-                    }
-                    case 5: {
-                        for (int i = 0; i < 5; i++) {
-                            System.out.println("books selected are   " + ArtsBooks[i]);
-                            break;
-                        }
-
-                    }default:
-                } {
-                    System.out.println("Invalid Number");
-
-
-                    bt1.idisplay();
-
-                }
-            }
-
-               // l1.setId(1);
+                // l1.setId(1);
             }
 
 
@@ -270,5 +289,5 @@ public class DisplayData {
 
 
         }
-}
+    }
 
